@@ -80,14 +80,16 @@ h1 {
   gap: 12px;
 }
 
-label {
+label,
+legend {
   display: flex;
   flex-direction: column;
   gap: 6px;
   font-weight: 600;
 }
 
-input {
+input,
+select {
   padding: 12px 14px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -96,9 +98,26 @@ input {
   font: inherit;
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: 2px solid rgba(94, 231, 255, 0.4);
   border-color: var(--accent);
+}
+
+.checkbox-group {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-group label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
 }
 
 button {
@@ -129,6 +148,38 @@ button {
   border-radius: 18px;
   padding: 20px;
   text-align: center;
+}
+
+.summary-text {
+  color: var(--muted);
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.metric-card h3 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.metric-score {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent);
 }
 
 .score-label {
@@ -165,6 +216,10 @@ button {
 @media (max-width: 840px) {
   .hero-card,
   .result-card {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
     grid-template-columns: 1fr;
   }
 }
