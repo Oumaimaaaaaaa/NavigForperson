@@ -156,6 +156,29 @@ button {
   line-height: 1.7;
 }
 
+.assessment-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.chip {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  color: #dceaff;
+}
+
+.chip span {
+  font-weight: 800;
+  color: var(--accent);
+  margin-inline-start: 4px;
+}
+
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

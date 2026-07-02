@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigate</title>
+    <title>Navigate | Cyber Exposure Engineering</title>
     <meta
       name="description"
-      content="A simple demo to assess how exposed your personal information may be online."
+      content="A professional-style cybersecurity exposure assessment demo for digital assets and online identities."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,12 +20,12 @@
     <main class="page-shell">
       <section class="hero-card">
         <div class="hero-copy">
-          <p class="eyebrow">Cybersecurity OSINT MVP</p>
+          <p class="eyebrow">Senior Cybersecurity Engineering</p>
           <h1>Navigate</h1>
           <p class="lead">
-            Analyze a digital asset or identity exposed on the internet. This demo
-            combines identity, infrastructure, and hygiene signals to estimate the
-            likelihood of compromise or visibility.
+            Assess the exposure of a digital asset or identity using a structured
+            threat-modeling workflow inspired by OSINT, external attack surface
+            review, and defensive engineering practices.
           </p>
           <div class="note-box">
             <strong>Note:</strong> This version uses local heuristics inspired by
@@ -61,6 +61,16 @@
             </select>
           </label>
 
+          <label>
+            Threat context
+            <select id="context" name="context">
+              <option value="external">External attack surface</option>
+              <option value="credential">Credential exposure</option>
+              <option value="cloud">Cloud posture review</option>
+              <option value="supply">Third-party / supply-chain</option>
+            </select>
+          </label>
+
           <fieldset class="checkbox-group">
             <legend>Signal indicators</legend>
             <label><input type="checkbox" id="public-social" /> Public social presence</label>
@@ -80,6 +90,10 @@
           <div id="score-value" class="score-value">0/100</div>
           <div id="risk-level" class="risk-level">Not defined</div>
           <p id="summary-text" class="summary-text"></p>
+          <div class="assessment-panel">
+            <div class="chip">Residual risk <span id="residual-risk">0</span></div>
+            <div class="chip">Confidence <span id="confidence-level">Low</span></div>
+          </div>
         </div>
 
         <div class="result-content">
@@ -104,6 +118,9 @@
 
           <h2>What was detected</h2>
           <ul id="exposure-list" class="exposure-list"></ul>
+
+          <h3>Priority controls</h3>
+          <ul id="controls-list" class="tips-list"></ul>
 
           <h3>Recommended cybersecurity tools</h3>
           <ul id="tools-list" class="tips-list"></ul>
