@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigate</title>
+    <meta
+      name="description"
+      content="A simple demo to assess how exposed your personal information may be online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Cybersecurity MVP • English version</p>
+          <h1>Navigate</h1>
+          <p class="lead">
+            Enter your name, email, and phone number, and we’ll give you a quick
+            exposure score that shows how visible your digital information is.
+          </p>
+          <div class="note-box">
+            <strong>Note:</strong> This is a demo version based on simple local
+            analysis and can later be connected to HaveIBeenPwned or other APIs.
+          </div>
+        </div>
+
+        <form id="risk-form" class="risk-form">
+          <label>
+            Full name
+            <input type="text" id="name" name="name" placeholder="Example: Omar Ben Idriss" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" name="email" placeholder="Example: user@email.com" />
+          </label>
+
+          <label>
+            Phone number
+            <input type="tel" id="phone" name="phone" placeholder="Example: +212 666 123 456" />
+          </label>
+
+          <button type="submit">Start analysis</button>
+        </form>
+      </section>
+
+      <section id="result-card" class="result-card hidden" aria-live="polite">
+        <div class="score-panel">
+          <p class="score-label">Exposure score</p>
+          <div id="score-value" class="score-value">0/100</div>
+          <div id="risk-level" class="risk-level">Not defined</div>
+        </div>
+
+        <div class="result-content">
+          <h2>What appeared?</h2>
+          <ul id="exposure-list" class="exposure-list"></ul>
+
+          <h3>How to protect yourself</h3>
+          <ul id="tips-list" class="tips-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
